@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "bulma": "^0.9.3",
+    "react": "^17.0.2"
+  }
+}

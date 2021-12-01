@@ -1,0 +1,110 @@
+
+
+
+.shop-button {
+    background-color: lightgrey;
+    border: ridge 5px darkgrey;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    margin: 10px 9px 10px 0px;
+    border-radius: 10px;
+}
+.shop-button :active {
+    background-color: grey;
+}
+
+.shop-button #image {
+    width: 25%;
+}
+
+.shop-button img {
+    height:64px;
+    width:64px;
+}
+
+.shop-button #nameAndPrice {
+    margin: 0px;
+    width: 60%;
+}
+
+.shop-button #nameAndCost h1:first-of-type {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.shop-button #amount {
+    font-size:40px;
+}
+
+.shop-button #levelButton {
+    font-size: 20px;
+}
+
+.levelHeader {
+    background-color: lightgrey;
+    border: groove 5px skyblue;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    margin: 10px 9px 10px 0px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.shopHeader {
+    background-color: lightgrey;
+    border: groove 5px skyblue;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    margin: 10px 9px 10px 0px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#stats {
+    width:600px;
+    height:100px;
+    float:left;
+}
+
+#scoreContainer {
+    background-color: lightgrey;
+    width: 50%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: ridge 10px skyblue;
+}
+
+#mainClicker:active {
+    background-color: #709ebf;
+}
+
+.sectionLeft {
+    float: left;
+    width: 20%;
+}
+.sectionCenter {
+    display: inline-block;
+    width:60%;
+}
+.sectionRight {
+    float:right;
+    width: 20%;
+}
+
+#clickObject:hover {
+    transform: scale(1.10);
+}
+#clickObject:active {
+    transform: scale(0.90);
+}
+#clickObject {
+    position: relative;
+    transition: all .1s ease-in-out;
+}
