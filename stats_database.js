@@ -13,7 +13,8 @@ if (row === undefined) {
         CREATE TABLE statsinfo ( id INTEGER PRIMARY KEY,
             wins INTEGER,
             losses INTEGER, 
-            points INTEGER, 
+            points INTEGER,
+            draftPoints INTEGER, 
             basketballs INTEGER, 
             basketballCost INTEGER,
             jordans INTEGER,
@@ -35,8 +36,8 @@ if (row === undefined) {
             finishingLevel INTEGER,
             finishingCost INTEGER 
             );
-        INSERT INTO statsinfo (wins, losses, points, basketballs, basketballCost, jordans, jordansCost, jerseys, jerseysCost, gatorade, gatoradeCost, assistantCoaches, assistantCoachCost, ballHandlingLevel, ballHandlingCost, shootingLevel, shootingCost, defenseLevel, defenseCost, playmakingLevel, playmakingCost, finishingLevel, finishingCost) VALUES (0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000),
-         (0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000)
+        INSERT INTO statsinfo (wins, losses, points, draftPoints, basketballs, basketballCost, jordans, jordansCost, jerseys, jerseysCost, gatorade, gatoradeCost, assistantCoaches, assistantCoachCost, ballHandlingLevel, ballHandlingCost, shootingLevel, shootingCost, defenseLevel, defenseCost, playmakingLevel, playmakingCost, finishingLevel, finishingCost) VALUES (0, 0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000),
+         (0, 0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000)
     `;
     
     db.exec(sqlInit);
