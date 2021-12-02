@@ -10,7 +10,9 @@ const stmt = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and n
 let row = stmt.get();
 if (row === undefined) {
     const sqlInit = `
-        CREATE TABLE statsinfo ( id INTEGER PRIMARY KEY, 
+        CREATE TABLE statsinfo ( id INTEGER PRIMARY KEY,
+            wins INTEGER,
+            losses INTEGER, 
             points INTEGER, 
             basketballs INTEGER, 
             basketballCost INTEGER,
@@ -33,8 +35,8 @@ if (row === undefined) {
             finishingLevel INTEGER,
             finishingCost INTEGER 
             );
-        INSERT INTO statsinfo (points, basketballs, basketballCost, jordans, jordansCost, jerseys, jerseysCost, gatorade, gatoradeCost, assistantCoaches, assistantCoachCost, ballHandlingLevel, ballHandlingCost, shootingLevel, shootingCost, defenseLevel, defenseCost, playmakingLevel, playmakingCost, finishingLevel, finishingCost) VALUES (0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000),
-         (0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000)
+        INSERT INTO statsinfo (wins, losses, points, basketballs, basketballCost, jordans, jordansCost, jerseys, jerseysCost, gatorade, gatoradeCost, assistantCoaches, assistantCoachCost, ballHandlingLevel, ballHandlingCost, shootingLevel, shootingCost, defenseLevel, defenseCost, playmakingLevel, playmakingCost, finishingLevel, finishingCost) VALUES (0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000),
+         (0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000)
     `;
     
     db.exec(sqlInit);
