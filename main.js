@@ -1,4 +1,9 @@
 var points = 0;
+var draftPoints = 0;
+
+// Record
+var wins = 0;
+var losses = 0;
 
 // Shop variables
 
@@ -38,6 +43,10 @@ function pointClick(number) {
     points += number;
     document.getElementById("points").innerHTML = points;
 }
+
+// Active oponent team object
+
+var activeOpponent = {};
 
 // Shop Functions
 

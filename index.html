@@ -3,14 +3,38 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
   <title>UNCClicker</title>
   <link rel="stylesheet" type="text/css" href="interface.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <script type="text/javascript" src="main.js"></script>
+  <!-- async executes scripts as soon as downloaded without blocking browser from loading  -->
+  <script type="text/javascript" src="teamsimulation.js" async></script>
+  <script type="text/javascript" src="countdown.js" async></script>
+  <script type="text/javascript" src="main.js" async></script>
+  
 </head>
 
 <body>
 
+<!-- NavBar -->
+<nav id="topNavBar" class="navbar" role="navigationAndMenu">
+  <div class="navbar-brand">
+    <img src="./images/unclogo.png" width = "110" height= "100">
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <!-- need href -->
+      <a id="loginButton" class="navbar-item">Log in</a>
+      <a id="registerButton" class="navbar-item">Register</a>
+    </div>
+    <div class="navbar-end">
+      <div id="record" class="navbar-item"><p id="wins">0</p>-<p id="losses">0</p></div>
+      <p id="countdown" class="navbar-item"></p>
+      <p id="upNextMatch" class="navbar-item">Until next match vs :</p>
+        <img id="opponentLogo" class="navbar-item" src="" width = "110" height="100">
+    </div>
+  </div>
+</nav>
 <!-- Left Section to hold buttons to level up your stats-->
 <div class="sectionLeft">
   <div class="levelHeader">
@@ -20,7 +44,7 @@
   <div class="shop-button" onClick="levelBallHandling()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
           <h1>Level Ball Handling</h1>
           <p>Price: <span id="ballHandlingCost">1000</span> pts</p>
@@ -33,7 +57,7 @@
   <div class="shop-button" onClick="levelShooting()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
           <h1>Level Shooting</h1>
           <p>Price: <span id="shootingCost">1000</span> pts</p>
@@ -46,7 +70,7 @@
   <div class="shop-button" onClick="levelDefense()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
           <h1>Level Defense</h1>
           <p>Price: <span id="defenseCost">1000</span> pts</p>
@@ -59,7 +83,7 @@
   <div class="shop-button" onClick="levelPlaymaking()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
           <h1>Level Playmaking</h1>
           <p>Price: <span id="playmakingCost">1000</span> pts</p>
@@ -72,7 +96,7 @@
   <div class="shop-button" onClick="levelFinishing()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
           <h1>Level Finishing</h1>
           <p>Price: <span id="finishingCost">1000</span> pts</p>
@@ -89,7 +113,7 @@
       <span id="points">0</span> points <br>
       <span id="pointspersecond">0</span> points per second
     </div>
-    <img src="./unclogo.png" height="350px" width="300px" id="clickObject" onClick="pointClick(1)"></img> 
+    <img src="./images/unclogo.png" height="350px" width="300px" id="clickObject" onClick="pointClick(1)"></img> 
   </center>
 </div>
 
@@ -101,7 +125,7 @@
   <div class="shop-button" onClick="buyBasketball()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/basketball.png" ></td>
         <td id="nameAndPrice">
           <h1>Basketball</h1>
           <p>Price: <span id="basketballCost">10</span> pts</p>
@@ -115,7 +139,7 @@
   <div class="shop-button" onClick="buyJordans()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/jordans.png" ></td>
         <td id="nameAndPrice">
           <h1>Jordans</h1>
           <p>Price: <span id="jordansCost">100</span> pts</p>
@@ -129,7 +153,7 @@
   <div class="shop-button" onClick="buyJerseys()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/jersey.jpg" ></td>
         <td id="nameAndPrice">
           <h1>Jerseys</h1>
           <p>Price: <span id="jerseysCost">1000</span> pts</p>
@@ -143,7 +167,7 @@
   <div class="shop-button" onClick="buyGatorade()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/gatorade.png" ></td>
         <td id="nameAndPrice">
           <h1>Gatorade</h1>
           <p>Price: <span id="gatoradeCost">10000</span> pts</p>
@@ -157,7 +181,7 @@
   <div class="shop-button" onClick="buyAssistantCoach()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./unclogo.png" ></td>
+        <td id="image"><img src="./images/assitantcoach.jpg" ></td>
         <td id="nameAndPrice">
           <h1>Assistant Coach</h1>
           <p>Price: <span id="assistantCoachCost">100000</span> pts</p>
