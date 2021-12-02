@@ -121,6 +121,32 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.playerShop {
+    margin: auto;
+    display: inline-block;
+}
+
+.playerPortrait {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+.playerCaption {
+    display:block;
+    font-size: 10px;
+}
+
+.draftPointHeader {
+    transition: all .2s ease-in-out;
+    width: 100%;
+    margin: 10px 9px 10px 0px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .shopHeader {
     background-color: lightgrey;
     border: groove 5px skyblue;
@@ -131,6 +157,31 @@
     text-align: center;
     font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bottomRow {
+    height: 200px;
+    background-color: lightgrey;
+    border: ridge 10px skyblue;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    margin: 10px 9px 10px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottomRow-item1 {
+    flex:50%;
+    display: flex;
+    flex-direction: column;
+    border-right: ridge 5px skyblue;
+}
+
+.bottomRow-item2 {
+    flex:50%;
+    display: flex;
+    flex-direction: column;
 }
 
 #stats {
