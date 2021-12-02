@@ -29,7 +29,9 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
+.shop-item {
+    width: 100%;
+}
 
 .shop-button {
     background-color: lightgrey;
@@ -43,18 +45,49 @@
     background-color: grey;
 }
 
+.shop-button :hover{
+    background-color: #adc3d7;
+    transition: background-color .5s;
+    cursor: pointer;
+    /* display: block; */
+}
+
+.shop-button :hover + .itemTooltip {
+    display:block;
+}
+
+.itemTooltip {
+    display: none;
+    background: #C8C8C8;
+    margin-left: 20px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    right: 20%;
+    width: 300px;
+    height: 150px;
+}
+
 .shop-button #image {
-    width: 25%;
+    width: 64px;
+    vertical-align: middle;
 }
 
 .shop-button img {
     height:64px;
     width:64px;
+    vertical-align: middle;
 }
 
 .shop-button #nameAndPrice {
     margin: 0px;
     width: 60%;
+    vertical-align: middle;
+    padding-left: 12px;
+}
+
+.shop-button #buttonTitle {
+    font-weight: bold;
 }
 
 .shop-button #nameAndCost h1:first-of-type {
@@ -64,10 +97,16 @@
 
 .shop-button #amount {
     font-size:40px;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 12px;
 }
 
 .shop-button #levelButton {
     font-size: 20px;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 12px;
 }
 
 .levelHeader {
@@ -109,6 +148,10 @@
     font-size: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: ridge 10px skyblue;
+}
+
+#points {
+    font-size: 60px;
 }
 
 #mainClicker:active {

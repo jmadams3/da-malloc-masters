@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="interface.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <!-- async executes scripts as soon as downloaded without blocking browser from loading  -->
+  <script type="text/javascript" src="extras.js" async></script>
   <script type="text/javascript" src="teamsimulation.js" async></script>
   <script type="text/javascript" src="countdown.js" async></script>
   <script type="text/javascript" src="main.js" async></script>
@@ -46,7 +47,7 @@
       <tr>
         <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
-          <h1>Level Ball Handling</h1>
+          <h1>Level <span id="buttonTitle">Ball Handling</span></h1>
           <p>Price: <span id="ballHandlingCost">1000</span> pts</p>
         </td>
         <td id="levelButton">Level: <span id="ballHandlingLevel">0</span></td>
@@ -59,7 +60,7 @@
       <tr>
         <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
-          <h1>Level Shooting</h1>
+          <h1>Level <span id="buttonTitle">Shooting</span></h1>
           <p>Price: <span id="shootingCost">1000</span> pts</p>
         </td>
         <td id="levelButton">Level: <span id="shootingLevel">0</span></td>
@@ -72,7 +73,7 @@
       <tr>
         <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
-          <h1>Level Defense</h1>
+          <h1>Level <span id="buttonTitle">Defense</span></h1>
           <p>Price: <span id="defenseCost">1000</span> pts</p>
         </td>
         <td id="levelButton">Level: <span id="defenseLevel">0</span></td>
@@ -85,7 +86,7 @@
       <tr>
         <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
-          <h1>Level Playmaking</h1>
+          <h1>Level <span id="buttonTitle">Playmaking</span></h1>
           <p>Price: <span id="playmakingCost">1000</span> pts</p>
         </td>
         <td id="levelButton">Level: <span id="playmakingLevel">0</span></td>
@@ -98,7 +99,7 @@
       <tr>
         <td id="image"><img src="./images/unclogo.png" ></td>
         <td id="nameAndPrice">
-          <h1>Level Finishing</h1>
+          <h1>Level <span id="buttonTitle">Finishing</span></h1>
           <p>Price: <span id="finishingCost">1000</span> pts</p>
         </td>
         <td id="levelButton">Level: <span id="finishingLevel">0</span></td>
@@ -127,12 +128,13 @@
       <tr>
         <td id="image"><img src="./images/basketball.png" ></td>
         <td id="nameAndPrice">
-          <h1>Basketball</h1>
+          <h1 id="buttonTitle">Basketball</h1>
           <p>Price: <span id="basketballCost">10</span> pts</p>
         </td>
         <td id="amount"><span id="basketballs">0</span></td>
       </tr>
     </table>
+    <div class="itemTooltip">(stats)</div>
   </div>
 
   <!-- Jordans -->
@@ -141,12 +143,13 @@
       <tr>
         <td id="image"><img src="./images/jordans.png" ></td>
         <td id="nameAndPrice">
-          <h1>Jordans</h1>
+          <h1 id="buttonTitle">Jordans</h1>
           <p>Price: <span id="jordansCost">100</span> pts</p>
         </td>
         <td id="amount"><span id="jordans">0</span></td>
       </tr>
     </table>
+    <div class="itemTooltip">(stats)</div>
   </div>
 
   <!-- Jerseys -->
@@ -155,12 +158,13 @@
       <tr>
         <td id="image"><img src="./images/jersey.jpg" ></td>
         <td id="nameAndPrice">
-          <h1>Jerseys</h1>
+          <h1 id="buttonTitle">Jerseys</h1>
           <p>Price: <span id="jerseysCost">1000</span> pts</p>
         </td>
         <td id="amount"><span id="jerseys">0</span></td>
       </tr>
     </table>
+    <div class="itemTooltip">(stats)</div>
   </div>
 
   <!-- Gatorade -->
@@ -169,12 +173,13 @@
       <tr>
         <td id="image"><img src="./images/gatorade.png" ></td>
         <td id="nameAndPrice">
-          <h1>Gatorade</h1>
+          <h1 id="buttonTitle">Gatorade</h1>
           <p>Price: <span id="gatoradeCost">10000</span> pts</p>
         </td>
         <td id="amount"><span id="gatorade">0</span></td>
       </tr>
     </table>
+    <div class="itemTooltip">(stats)</div>
   </div>
 
   <!-- Assistant Coaches -->
@@ -183,12 +188,13 @@
       <tr>
         <td id="image"><img src="./images/assitantcoach.jpg" ></td>
         <td id="nameAndPrice">
-          <h1>Assistant Coach</h1>
+          <h1 id="buttonTitle">Assistant Coach</h1>
           <p>Price: <span id="assistantCoachCost">100000</span> pts</p>
         </td>
         <td id="amount"><span id="assistantCoaches">0</span></td>
       </tr>
     </table>
+    <div class="itemTooltip">(stats)</div>
   </div>
 
   <!-- Debug -->
