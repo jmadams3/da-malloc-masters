@@ -37,11 +37,11 @@ On the bottom right of your screen is your current roster. You have 5 slots for 
 
 The front end is split up between a couple different js files: countdown.js, saving.js, teamsimulation.js, and main.js.
 
-For a breakdown of what is happening in main, click here [a relative link](./docs/main.md).
+For a breakdown of what is happening in main, click [here](./docs/main.md).
 
-To understand the countdown timer, click here [a relative link](./docs/countdown.md)
+To understand the countdown timer, click [here](./docs/countdown.md)
 
-For more on the team system, click here [a relative link](./docs/teamsimulation.md)
+For more on the team system, click here [here](./docs/teamsimulation.md)
 
 ## How It Works - Back End
 
