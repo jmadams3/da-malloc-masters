@@ -9,18 +9,23 @@ var losses = 0;
 
 var basketballs = 0;
 var basketballCost = 10;
+var basketballPoints = 1;
 
 var jordans = 0;
 var jordansCost = 100;
+var jordansPoints = 5;
 
 var jerseys = 0;
 var jerseysCost = 1000;
+var jerseysPoints = 25;
 
 var gatorade = 0;
 var gatoradeCost = 10000;
+var gatoradePoints = 100;
 
 var assistantCoaches = 0;
 var assistantCoachCost = 100000;
+var assistantCoachPoints = 500;
 
 // Level Variables
 
@@ -48,6 +53,16 @@ function pointClick(number) {
 
 var activeOpponent = {};
 
+// Initialize tooltip
+
+function initializeTooltip () {
+    document.getElementById("basketballPoints").innerHTML = basketballPoints;
+    document.getElementById("jordansPoints").innerHTML = jordansPoints;
+    document.getElementById("jerseysPoints").innerHTML = jerseysPoints;
+    document.getElementById("gatoradePoints").innerHTML = gatoradePoints;
+    document.getElementById("assistantCoachPoints").innerHTML = assistantCoachPoints;
+}
+
 // Shop Functions
 
 function buyBasketball() {
@@ -58,6 +73,7 @@ function buyBasketball() {
         document.getElementById("basketballs").innerHTML = basketballs;
         document.getElementById("points").innerHTML = points;
         basketballCost = Math.ceil(basketballCost * 1.15);
+        document.getElementById("totalBasketballPoints").innerHTML = basketballPoints * basketballs;
     }
     
     document.getElementById("basketballCost").innerHTML = basketballCost;
@@ -72,6 +88,7 @@ function buyJordans() {
         document.getElementById("jordans").innerHTML = jordans;
         document.getElementById("points").innerHTML = points;
         jordansCost = Math.ceil(jordansCost * 1.15);
+        document.getElementById("totalJordansPoints").innerHTML = jordansPoints * jordans;
     }
     
     document.getElementById("jordansCost").innerHTML = jordansCost;
@@ -86,6 +103,7 @@ function buyJerseys() {
         document.getElementById("jerseys").innerHTML = jerseys;
         document.getElementById("points").innerHTML = points;
         jerseysCost = Math.ceil(jerseysCost * 1.15);
+        document.getElementById("totalJerseysPoints").innerHTML = jerseysPoints * jerseys;
     }
     
     document.getElementById("jerseysCost").innerHTML = jerseysCost;
@@ -100,6 +118,7 @@ function buyGatorade() {
         document.getElementById("gatorade").innerHTML = gatorade;
         document.getElementById("points").innerHTML = points;
         gatoradeCost = Math.ceil(gatoradeCost * 1.15);
+        document.getElementById("totalGatoradePoints").innerHTML = gatoradePoints * gatorade;
     }
     
     document.getElementById("gatoradeCost").innerHTML = gatoradeCost;
@@ -114,6 +133,7 @@ function buyAssistantCoach() {
         document.getElementById("assistantCoaches").innerHTML = assistantCoaches;
         document.getElementById("points").innerHTML = points;
         assistantCoachCost = Math.ceil(assistantCoachCost * 1.15);
+        document.getElementById("totalAssistantCoachPoints").innerHTML = assistantCoachPoints * assistantCoaches;
     }
     
     document.getElementById("assistantCoachCost").innerHTML = assistantCoachCost;
@@ -188,7 +208,7 @@ function levelFinishing() {
 }
 
 function updatePointsPerSecond() {
-    var pointsPerSecond = basketballs + (jordans * 5) + (jerseys * 25) + (gatorade * 100) + (assistantCoaches * 500);
+    var pointsPerSecond = (basketballs * basketballPoints) + (jordans * jordansPoints) + (jerseys * jerseysPoints) + (gatorade * gatoradePoints) + (assistantCoaches * assistantCoachPoints);
     document.getElementById("pointspersecond").innerHTML = pointsPerSecond;
 }
 
@@ -198,11 +218,13 @@ function giveMoney() {
 
 window.setInterval(function() {
 
-pointClick(basketballs);
-pointClick(jordans * 5);
-pointClick(jerseys * 25);
-pointClick(gatorade * 100);
-pointClick(assistantCoaches * 500);
+pointClick(basketballs * basketballPoints);
+pointClick(jordans * jordansPoints);
+pointClick(jerseys * jerseysPoints);
+pointClick(gatorade * gatoradePoints);
+pointClick(assistantCoaches * assistantCoachPoints);
 document.title = points + " points - UNCclicker"
 
 }, 1000)
+
+initializeTooltip();
