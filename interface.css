@@ -2,11 +2,28 @@
 #loginButton {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
+    border: ridge 2px black;
+    border-right: 0px;
 }
 
 #registerButton {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
+    border: ridge 2px black;
+    border-right: 0px;
+}
+
+#saveButton {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    border: ridge 2px black;
+    border-right: 0px;
+}
+
+#loadButton {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    border: ridge 2px black;
 }
 
 #upNextMatch { 
