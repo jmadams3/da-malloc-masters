@@ -33,7 +33,7 @@ On the bottom left of your screen is the player shop, which you use draft points
 On the bottom right of your screen is your current roster. You have 5 slots for players to be in your starting lineup. Currently, every player you purchase increases your total pps by 50%, but in the future different players may give you different bonuses. Try to fill out your roster to maximize your pps!
 
 
-## How It Works - Front End
+# How It Works - Front End
 
 The front end is split up between a couple different js files: countdown.js, saving.js, teamsimulation.js, and main.js.
 
@@ -43,6 +43,6 @@ To understand the countdown timer, click [here](./docs/countdown.md)
 
 For more on the team system, click here [here](./docs/teamsimulation.md)
 
-## How It Works - Back End
+# How It Works - Back End
 
 Fill in documentation for the backend.
