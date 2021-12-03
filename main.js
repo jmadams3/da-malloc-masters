@@ -266,11 +266,6 @@ function giveMoney() {
     document.getElementById("draftPoints").innerHTML = draftPoints;
 }
 
-function updatePointsPerSecond() {
-    var pointsPerSecond = (basketballs + (jordans * 5) + (jerseys * 25) + (gatorade * 100) + (assistantCoaches * 500)) * rosterMultiplier;
-    document.getElementById("pointspersecond").innerHTML = pointsPerSecond;
-}
-
 window.setInterval(function() {
 
 pointClick(basketballs * basketballPoints * rosterMultiplier);

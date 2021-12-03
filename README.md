@@ -15,34 +15,34 @@ Hello! Welcome to our final project, UNCClicker! In this incremental game, you t
 
 The general premise works like any other incremental game. Click the UNC Logo to get points, and start buying things in the shop to increase your points per second.
 
-1. The Shop and the Level Shop
+## The Shop and the Level Shop
 ![Image](./images/READMEIMAGES/shop.PNG)
 Here you can purchase different practice equipment, with each item getting more expensive the more you purchase. They give you increasingly more points per second. The level shop operates similarly, although the different stats dont directly give you more points per second.
 
 
-2. Match System
+## Match System
 ![Image](./images/READMEIMAGES/nextMatch.PNG)
 In the top left you will notice your teams record, the amount of time until the next match, and the Logo of the team you will be playing. The ACC team you are playing has randomized stats which are proportional to what your teams stats are. If at least 3 our of 5 of your stats are higher than your opponent's stats, then you win and obtain draft points proportional to how many stats of yours were higher than your opponent's.
 
-3. Draft Points
+## Draft Points
 ![Image](./images/READMEIMAGES/draftPoints.PNG)
 On the bottom left of your screen is the player shop, which you use draft points you get from winning matches to purchase the current UNC basketball lineup. In the future, more UNC players of past and present will be added with different bonuses.
 
-4. Roster System
+## Roster System
 ![Image](./images/READMEIMAGES/roster.PNG)
 On the bottom right of your screen is your current roster. You have 5 slots for players to be in your starting lineup. Currently, every player you purchase increases your total pps by 50%, but in the future different players may give you different bonuses. Try to fill out your roster to maximize your pps!
 
 
-## Check in with instructional staff
+## How It Works - Front End
 
-Once all the groups are together, we'll assign each group to an LA to check in with as you progress through the project.
+The front end is split up between a couple different js files: countdown.js, saving.js, teamsimulation.js, and main.js.
 
-We will post that so that your team can schedule a time for an initial check-in with your assigned LA. It would be a good idea also to add your LA to your repository.
+For a breakdown of what is happening in main, click here [a relative link](./docs/main.md).
 
-## Assignment instructions
+To understand the countdown timer, click here [a relative link](./docs/countdown.md)
 
-And that is about all you need to get started.
+For more on the team system, click here [a relative link](./docs/teamsimulation.md)
 
-All the rest of the assignment instructions are available at: https://comp426.johndmart.in/assignments/99
+## How It Works - Back End
 
-Good skill, and have fun with this!
+Fill in documentation for the backend.
