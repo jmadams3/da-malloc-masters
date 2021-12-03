@@ -1,4 +1,4 @@
-var tooltip = document.querySelectorAll('.itemTooltip');
+var tooltip = document.querySelectorAll('.tooltip');
 document.addEventListener('mousemove', followMouse, false);
 
 function followMouse(e) {
