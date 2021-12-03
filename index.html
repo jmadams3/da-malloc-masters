@@ -45,7 +45,7 @@
   <div class="shop-button" onClick="levelBallHandling()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/unclogo.png" ></td>
+        <td id="image"><img src="./images/ballHandling.png" ></td>
         <td id="nameAndPrice">
           <h1>Level <span id="buttonTitle">Ball Handling</span></h1>
           <p>Price: <span id="ballHandlingCost">1000</span> pts</p>
@@ -58,7 +58,7 @@
   <div class="shop-button" onClick="levelShooting()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/unclogo.png" ></td>
+        <td id="image"><img src="./images/shooting.png" ></td>
         <td id="nameAndPrice">
           <h1>Level <span id="buttonTitle">Shooting</span></h1>
           <p>Price: <span id="shootingCost">1000</span> pts</p>
@@ -71,7 +71,7 @@
   <div class="shop-button" onClick="levelDefense()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/unclogo.png" ></td>
+        <td id="image"><img src="./images/defense.png" ></td>
         <td id="nameAndPrice">
           <h1>Level <span id="buttonTitle">Defense</span></h1>
           <p>Price: <span id="defenseCost">1000</span> pts</p>
@@ -84,7 +84,7 @@
   <div class="shop-button" onClick="levelPlaymaking()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/unclogo.png" ></td>
+        <td id="image"><img src="./images/playmaking.png" ></td>
         <td id="nameAndPrice">
           <h1>Level <span id="buttonTitle">Playmaking</span></h1>
           <p>Price: <span id="playmakingCost">1000</span> pts</p>
@@ -97,7 +97,7 @@
   <div class="shop-button" onClick="levelFinishing()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/unclogo.png" ></td>
+        <td id="image"><img src="./images/finishing.png" ></td>
         <td id="nameAndPrice">
           <h1>Level <span id="buttonTitle">Finishing</span></h1>
           <p>Price: <span id="finishingCost">1000</span> pts</p>
@@ -162,7 +162,7 @@
   <div class="shop-button" onClick="buyJerseys()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/jersey.jpg" ></td>
+        <td id="image"><img src="./images/jersey.png" ></td>
         <td id="nameAndPrice">
           <h1 id="buttonTitle">Jerseys</h1>
           <p>Price: <span id="jerseysCost">1000</span> pts</p>
@@ -198,7 +198,7 @@
   <div class="shop-button" onClick="buyAssistantCoach()">
     <table class="shop-item">
       <tr>
-        <td id="image"><img src="./images/assitantcoach.jpg" ></td>
+        <td id="image"><img src="./images/assistantcoach.png" ></td>
         <td id="nameAndPrice">
           <h1 id="buttonTitle">Assistant Coach</h1>
           <p>Price: <span id="assistantCoachCost">100000</span> pts</p>
@@ -225,6 +225,35 @@
   </div>
 </div>
 
+<div class="sectionBottom">
+  <div class="bottomRow">
+    <div class="bottomRow-item1">
+      <div class="draftPointHeader">
+        <h1>Draft Points: <span id="draftPoints">0</span></h1>
+        <div class="playerShop">
+          <div class="playerPortrait"><img id="calebLovePortrait" src="./images/lovePortrait.jpg" style="max-height: 100px; max-width: 100px;" onClick="purchasePlayer(this,'love')"><span id="calebLoveCaption" class="playerCaption">5 draft points</span></div>
+          <div class="playerPortrait"><img id="leakyBlackPortrait" src="./images/blackPortrait.jpg" style="max-height: 100px; max-width: 100px;" onClick="purchasePlayer(this,'black')"><span id="leakyBlackCaption" class="playerCaption">5 draft points</span></div>
+          <div class="playerPortrait"><img id="dawsonGarciaPortrait" src="./images/garciaPortrait.jpg" style="max-height: 100px; max-width: 100px;" onClick="purchasePlayer(this,'garcia')"><span id="dawsonGarciaCaption" class="playerCaption">5 draft points</span></div>
+          <div class="playerPortrait"><img id="bradyManekPortrait" src="./images/manekPortrait.jpg" style="max-height: 100px; max-width: 100px;" onClick="purchasePlayer(this,'manek')"><span id="bradyManekCaption" class="playerCaption">5 draft points</span></div>
+          <div class="playerPortrait"><img id="armandoBacotPortrait" src="./images/bacotPortrait.jpg" style="max-height: 100px; max-width: 100px;" onClick="purchasePlayer(this,'bacot')"><span id="armandoBacotCaption" class="playerCaption">5 draft points</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomRow-item2">
+      <div class="draftPointHeader">
+        <h1>Current Roster: (<span id="rosterMultiplier">1.00</span>x pps)</h1>
+        <div class="playerShop">
+          <div class="playerPortrait"><img id="calebLovePortraitOwned" src="./images/x.png" style="max-height: 100px; max-width: 100px;" ></div>
+          <div class="playerPortrait"><img id="leakyBlackPortraitOwned" src="./images/x.png" style="max-height: 100px; max-width: 100px;" ></div>
+          <div class="playerPortrait"><img id="dawsonGarciaPortraitOwned" src="./images/x.png" style="max-height: 100px; max-width: 100px;" ></div>
+          <div class="playerPortrait"><img id="bradyManekPortraitOwned" src="./images/x.png" style="max-height: 100px; max-width: 100px;" ></div>
+          <div class="playerPortrait"><img id="armandoBacotPortraitOwned" src="./images/x.png" style="max-height: 100px; max-width: 100px;" ></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
 </body>
 
 

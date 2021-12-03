@@ -44,14 +44,29 @@ var playmakingCost = 1000;
 var finishingLevel = 0;
 var finishingCost = 1000;
 
+// Players
+
+var rosterMultiplier = 1.00;
+
+var players = {
+    love: false,
+    black: false,
+    garcia: false,
+    manek: false,
+    bacot: false,
+}
+
+
+// Active oponent team object
+
+var activeOpponent = {};
+
 function pointClick(number) {
     points += number;
     document.getElementById("points").innerHTML = points;
 }
 
-// Active oponent team object
 
-var activeOpponent = {};
 
 // Initialize tooltip
 
@@ -212,17 +227,57 @@ function updatePointsPerSecond() {
     document.getElementById("pointspersecond").innerHTML = pointsPerSecond;
 }
 
+// Player Purchase Handling
+function purchasePlayer(ele, item) {
+    if (players[item] == true) {
+        return;
+    }
+    if (draftPoints >= 5) {
+        draftPoints-= 5;
+        players[item] = true;
+        var id = ele.id;
+        addPlayerImg(item);
+        rosterMultiplier += .50;
+        document.getElementById("rosterMultiplier").innerHTML = rosterMultiplier;
+        updatePointsPerSecond();
+        document.getElementById("draftPoints").innerHTML = draftPoints;
+        document.getElementById(id).src = "./images/checkmark.png";
+    }
+}
+
+function addPlayerImg(item) {
+    if (item == 'love') {
+        document.getElementById("calebLovePortraitOwned").src = "./images/lovePortrait.jpg";
+    } else if (item == 'black') {
+        document.getElementById("leakyBlackPortraitOwned").src = "./images/blackPortrait.jpg";
+    } else if (item == 'garcia') {
+        document.getElementById("dawsonGarciaPortraitOwned").src = "./images/garciaPortrait.jpg";
+    } else if (item == 'manek') {
+        document.getElementById("bradyManekPortraitOwned").src = "./images/manekPortrait.jpg";
+    } else {
+        document.getElementById("armandoBacotPortraitOwned").src = "./images/bacotPortrait.jpg";
+    }
+}
+
+// Debug
 function giveMoney() {
     pointClick(30000000000);
+    draftPoints = 1000;
+    document.getElementById("draftPoints").innerHTML = draftPoints;
+}
+
+function updatePointsPerSecond() {
+    var pointsPerSecond = (basketballs + (jordans * 5) + (jerseys * 25) + (gatorade * 100) + (assistantCoaches * 500)) * rosterMultiplier;
+    document.getElementById("pointspersecond").innerHTML = pointsPerSecond;
 }
 
 window.setInterval(function() {
 
-pointClick(basketballs * basketballPoints);
-pointClick(jordans * jordansPoints);
-pointClick(jerseys * jerseysPoints);
-pointClick(gatorade * gatoradePoints);
-pointClick(assistantCoaches * assistantCoachPoints);
+pointClick(basketballs * basketballPoints * rosterMultiplier);
+pointClick(jordans * jordansPoints * rosterMultiplier);
+pointClick(jerseys * jerseysPoints * rosterMultiplier);
+pointClick(gatorade * gatoradePoints * rosterMultiplier);
+pointClick(assistantCoaches * assistantCoachPoints * rosterMultiplier);
 document.title = points + " points - UNCclicker"
 
 }, 1000)

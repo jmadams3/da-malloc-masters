@@ -16,10 +16,8 @@ var teamArray = [
 ]
 
 function assignOpponent() {
-    console.log("assigning opp");
     var newOpponentIndex = randomIntFromInterval(0, 13);
     var newOpponent = assignOpponentStats(teamArray[newOpponentIndex]);
-    console.log(newOpponent);
     activeOpponent = newOpponent;
     document.getElementById("opponentLogo").src = newOpponent.logo;
 }
@@ -67,6 +65,7 @@ function simulateMatch() {
     if (victoryPoints >= 3) {
         wins++;
         draftPoints += victoryPoints - 3;
+        document.getElementById("draftPoints").innerHTML = draftPoints;
         alert(`Congrats! You just beat ${activeOpponent.name}, earning yourself ${victoryPoints - 3} draft points! This brings your record to ${wins} - ${losses}.`);
         
     } else {
