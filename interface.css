@@ -26,6 +26,12 @@
     border: ridge 2px black;
 }
 
+#signOut {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    border: ridge 2px black;
+}
+
 #upNextMatch { 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
