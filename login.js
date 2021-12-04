@@ -10,7 +10,7 @@ window.addEventListener( "load", function() {
    const sendRequest = new XMLHttpRequest();
 
    // Set up request
-   sendRequest.open( "GET", "http://localhost:5000/app/user/" + username + "/" + pass );
+   sendRequest.open( "GET", "http://localhost:5000/app/login/" + username + "/" + pass );
 
    // Send request
    sendRequest.send();
@@ -20,7 +20,8 @@ window.addEventListener( "load", function() {
      if( sendRequest.status === 200 ) {
        alert( "Valid username / password" );
        localStorage.setItem( "id", JSON.parse( sendRequest.response ).id );
-      // alert( "currentUserId: " + localStorage.getItem( "id" ) );
+       alert( "currentUserId: " + localStorage.getItem( "id" ) );
+       window.location.replace("http://localhost:3000/game.html");
      } else if( sendRequest.status === 404 ) {
        alert( "Invalid username / password, please try again" );
      }
