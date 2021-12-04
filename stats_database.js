@@ -34,10 +34,23 @@ if (row === undefined) {
             playmakingLevel INTEGER,
             playmakingCost INTEGER,
             finishingLevel INTEGER,
-            finishingCost INTEGER 
+            finishingCost INTEGER,
+            rosterMultiplier FLOAT,
+            love BOOLEAN,
+            black BOOLEAN,
+            garcia BOOLEAN,
+            manek BOOLEAN,
+            bacot BOOLEAN,
+            time INTEGER,
+            opposingName TEXT,
+            opposingBallHandling INTEGER,
+            opposingShooting INTEGER,
+            opposingDefense INTEGER,
+            opposingPlaymaking INTEGER,
+            opposingFinishing INTEGER
             );
-        INSERT INTO statsinfo (wins, losses, points, draftPoints, basketballs, basketballCost, jordans, jordansCost, jerseys, jerseysCost, gatorade, gatoradeCost, assistantCoaches, assistantCoachCost, ballHandlingLevel, ballHandlingCost, shootingLevel, shootingCost, defenseLevel, defenseCost, playmakingLevel, playmakingCost, finishingLevel, finishingCost) VALUES (0, 0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000),
-         (0, 0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000)
+        INSERT INTO statsinfo (wins, losses, points, draftPoints, basketballs, basketballCost, jordans, jordansCost, jerseys, jerseysCost, gatorade, gatoradeCost, assistantCoaches, assistantCoachCost, ballHandlingLevel, ballHandlingCost, shootingLevel, shootingCost, defenseLevel, defenseCost, playmakingLevel, playmakingCost, finishingLevel, finishingCost, rosterMultiplier, love, black, garcia, manek, bacot, time, opposingName, opposingBallHandling, opposingShooting, opposingDefense, opposingPlaymaking, opposingFinishing) VALUES (0, 0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 1.00, 0, 0, 0, 0, 0, 600, 'Pitt', 0, 0, 0, 0, 0),
+         (0, 0, 0, 0, 0, 10, 0, 100, 0, 1000, 0, 10000, 0, 100000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 0, 1000, 1.00, 0, 0, 0, 0, 0, 600, 'Miami', 0, 0, 0, 0, 0)
     `;
     
     db.exec(sqlInit);
