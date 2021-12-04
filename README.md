@@ -52,3 +52,5 @@ The back end is split up between a few different js files: server.js, login_data
 For a breakdown of how the server.js file works, click [here](./docs/server.md).
 
 For a breakdown of how the databases work, click [here](./docs/databases.md).
+
+For more on the login and signup systems, click here [here](./docs/userInformation.md).
