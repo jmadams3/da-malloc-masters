@@ -4,8 +4,15 @@ var app = express()
 var logindb = require("./login_database.js")
 var statsdb = require("./stats_database.js")
 
+//require cors module
+const cors = require("cors")
+const md5 = require("md5")
+
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+
+//make express use cors
+app.use(cors());
 
 var HTTP_PORT = 5000
 
@@ -16,6 +23,22 @@ app.listen(HTTP_PORT, () => {
 app.get("/app/", (req, res, next) => {
     res.json({"message": "OK (200)"});
     res.status(200);
+});
+
+app.get("/app/users/", (req, res) => {	
+	const stmt = logindb.prepare("SELECT * FROM userinfo").all();
+	res.status(200).json(stmt);
+});
+
+app.post("/app/new/user", (req, res, next) => {
+	console.log(req.body);
+	var data = {
+		user: req.body.user,
+		pass: req.body.pass ? md5(req.body.pass) : null
+	}
+	const stmt = logindb.prepare("INSERT INTO userinfo (user, pass) VALUES (?, ?)");
+	const info = stmt.run(data.user, data.pass);
+	res.status(201).json({"message": info.changes+ " record created: ID " + info.lastInsertRowid + " (201)"});
 });
 
 // Create a new user; adds login info to login db and creates new stats db entry with base stats
@@ -32,8 +55,25 @@ app.post("/app/new/", (req, res) => {
 // Read a user's login info from login db at endpoint /app/user/:id
 app.get("/app/user/:id", (req, res) => {
     const stmt = logindb.prepare("SELECT * FROM userinfo WHERE id = ?");
-	const output = stmt.get(req.params.id);
-	res.status(200).json(output);
+	const user = stmt.get( req.params.id );
+	if (userInfo != undefined) {
+		res.status(200).json(userInfo);
+	  } else {
+		res.status(404).json({"message": "User not found"})
+	  }
+	  res.json(userInfo);
+});
+
+// LOGIN for a single user at endpoint /app/login
+app.get("/app/login/:user/:pass", (req, res) => {	
+	const stmt = logindb.prepare("SELECT * FROM userinfo WHERE user = ? AND pass = ?");
+  const userInfo = stmt.get(req.params.user, md5(req.params.pass))
+  if (userInfo != undefined) {
+    res.status(200).json(userInfo);
+  } else {
+    res.status(404).json({"message": "User not found"})
+  }
+  res.json(userInfo);
 });
 // READ a user's stats at endpoint /app/stats/:id
 app.get("/app/stats/:id", (req, res) => {
