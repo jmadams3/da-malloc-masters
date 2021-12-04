@@ -18,12 +18,12 @@ window.addEventListener( "load", function() {
    // Successful data submission
    sendRequest.addEventListener( "load", function( event ) {
      if( sendRequest.status === 200 ) {
-       alert( "Valid username / password" );
+       alert( "Valid username and password. Logging in!" );
        localStorage.setItem( "id", JSON.parse( sendRequest.response ).id );
        alert( "currentUserId: " + localStorage.getItem( "id" ) );
        window.location.replace("http://localhost:3000/game.html");
      } else if( sendRequest.status === 404 ) {
-       alert( "Invalid username / password, please try again" );
+       alert( "Invalid username or password, please try again" );
      }
    } );
 
