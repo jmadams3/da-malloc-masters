@@ -22,7 +22,7 @@
                     <form id="sign-in" action="" class="box">
                       <div class="tabs">
                         <ul>
-                          <li class="is-active" id="logintab" onclick="openTab('login')">
+                          <li class="is-active" id="logintab" onclick="location.href='index.html';">
                             <a>
                               <span class="icon is-small">
                                 <i class="fas fa-sign-in-alt"></i>
@@ -30,7 +30,7 @@
                               <span>Log in</span>
                             </a>
                           </li>
-                          <li id="registertab" onclick="openTab('register')">
+                          <li id="registertab" onclick="location.href='signup.html';">
                             <a>
                               <span class="icon is-small">
                                 <i class="fas fa-user-plus"></i>
@@ -41,7 +41,7 @@
                         </ul>
                       </div>
                         <div class="field">
-                          <label for="" class="label" id="userlabel">User</label>
+                          <label for="" class="label" id="userlabel">Username</label>
                           <div class="control has-icons-left">
                             <input type="username" id="user" name="user" placeholder="mallocmaster123" value="" class="input" required>
                             <span class="icon is-small is-left">
@@ -59,7 +59,7 @@
                           </div>
                         </div>
                         <div class="field has-addons has-addons-centered">
-                          <button class="button is-success" type="submit" onclick="location.href = 'game.html';" id="submit">Login</button>
+                          <button class="button is-success" type="submit" id="submit">Login</button>
                         </div>
                       </div>
                     </form>

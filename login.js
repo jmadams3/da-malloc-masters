@@ -34,6 +34,8 @@ window.addEventListener( "load", function() {
 
  }
 
+ 
+
  // Take over submit event of form element
  signInForm.addEventListener( "submit", function( event ) {
    event.preventDefault();

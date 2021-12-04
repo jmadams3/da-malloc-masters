@@ -2,8 +2,8 @@
 
 function openTab(tabName) {
     if (tabName == 'login') {
-        if (document.getElementById('signup')) {
-            document.getElementById('signup').id = 'sign-in';
+        if (document.getElementById('signup').id === 'signup') {
+            document.getElementById('signup').id = "sign-in";
         }
         document.getElementById('registertab').classList.remove('is-active');
         document.getElementById('logintab').classList.add('is-active');
@@ -12,8 +12,8 @@ function openTab(tabName) {
         document.getElementById('submit').innerHTML = "Login";
     }
     if (tabName == 'register') {
-        if (document.getElementById('sign-in')) {
-            document.getElementById('sign-in').id = 'signup';
+        if (document.getElementById('sign-in').id === 'sign-in') {
+            document.getElementById('sign-in').id = "signup";
         }
         document.getElementById('logintab').classList.remove('is-active');
         document.getElementById('registertab').classList.add('is-active');

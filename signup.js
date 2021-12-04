@@ -10,6 +10,7 @@ window.addEventListener( "load", function() {
 
         sendRequest.addEventListener( "load", function ( event ) { 
             alert("Your account was created!")
+            window.location.replace("http://localhost:3000/game.html");
         });
 
         sendRequest.open("POST", "http://localhost:5000/app/new/user" );
