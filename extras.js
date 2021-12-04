@@ -1,3 +1,5 @@
+// Allows the tooltip to follow the vertical coordinate of the cursor
+
 var tooltip = document.querySelectorAll('.tooltip');
 document.addEventListener('mousemove', followMouse, false);
 

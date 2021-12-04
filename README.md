@@ -46,3 +46,11 @@ For more on the team system, click here [here](./docs/teamsimulation.md)
 # How It Works - Back End
 
 Fill in documentation for the backend.
+
+The back end is split up between a few different js files: server.js, login_database.js, stats_database.js, login.js, and signup.js.
+
+For a breakdown of how the server.js file works, click [here](./docs/server.md).
+
+For a breakdown of how the databases work, click [here](./docs/databases.md).
+
+For more on the login and signup systems, click here [here](./docs/userInformation.md).

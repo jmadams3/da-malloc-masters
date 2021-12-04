@@ -30,7 +30,7 @@ app.get("/app/users/", (req, res) => {
 	res.status(200).json(stmt);
 });
 
-app.post("/app/new/user", (req, res, next) => {
+app.post("/app/new/user", (req, res) => {
 	console.log(req.body);
 	var data = {
 		user: req.body.user,
@@ -56,22 +56,33 @@ app.post("/app/new/", (req, res) => {
 app.get("/app/user/:id", (req, res) => {
     const stmt = logindb.prepare("SELECT * FROM userinfo WHERE id = ?");
 	const user = stmt.get( req.params.id );
-	if (userInfo != undefined) {
-		res.status(200).json(userInfo);
+	if (user === undefined) {
+		res.status(404);
 	  } else {
-		res.status(404).json({"message": "User not found"})
+		res.status(200);
 	  }
-	  res.json(userInfo);
+	  res.json(user);
 });
+
+
+app.post("/app/login/", (req, res) => {
+	const stmt = logindb.prepare("SELECT * FROM userinfo WHERE user = ? AND pass = ?");
+	const result = stmt.get(req.body.user, md5(req.body.pass));
+	if(result === undefined) {
+		res.status(404).json({"message":"Incorrect username or password. (404)"})
+	} else {
+		res.status(200).json(result);
+	}
+})
 
 // LOGIN for a single user at endpoint /app/login
 app.get("/app/login/:user/:pass", (req, res) => {	
 	const stmt = logindb.prepare("SELECT * FROM userinfo WHERE user = ? AND pass = ?");
   const userInfo = stmt.get(req.params.user, md5(req.params.pass))
-  if (userInfo != undefined) {
-    res.status(200).json(userInfo);
+  if (userInfo === undefined) {
+    res.status(404);
   } else {
-    res.status(404).json({"message": "User not found"})
+    res.status(200);
   }
   res.json(userInfo);
 });
@@ -83,7 +94,7 @@ app.get("/app/stats/:id", (req, res) => {
 });
 
 // UPDATE a single user (HTTP method PATCH) at endpoint /app/update/user/:id
-app.patch("/app/update/user/:id", (req, res) => {
+app.patch("/app/update/user/:user", (req, res) => {
 	const stmt = logindb.prepare("UPDATE userinfo SET user = COALESCE(?,user), pass = COALESCE(?,pass) WHERE id = ?");
 	const output = stmt.run(req.body.user, req.body.pass, req.params.id);
 	res.json({"message":"1 record updated: ID %id% (200)".replace("%id%", req.params.id)});
