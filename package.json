@@ -1,4 +1,14 @@
 {
+  "name": "a99",
+    "version": "1.0.0",
+    "description": "COMP426 final",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jdmar3-comp426/a99-da-malloc-masters.git"
+    },
+    "author": "Ellis Kay",
+    "license": "GPL-3.0-or-later",
   "scripts": {
     "client": "npx browser-sync start -sw",
     "server": "node server.js",

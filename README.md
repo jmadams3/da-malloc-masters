@@ -10,6 +10,18 @@ Hello! Welcome to our final project, UNCClicker! In this incremental game, you t
 4. Database lead: Justin Adams (jmadams3)
 5. jboy953
 
+## Dependencies
+<code>"dependencies": {
+    "better-sqlite3": "^7.4.5",
+    "browser-sync": "^2.27.7",
+    "bulma": "^0.9.3",
+    "concurrently": "^6.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "md5": "^2.3.0",
+    "react": "^17.0.2"
+  }</code>
+
 
 ## How to play
 
@@ -52,3 +64,9 @@ For a breakdown of how the server.js file works, click [here](./docs/server.md).
 For a breakdown of how the databases work, click [here](./docs/databases.md).
 
 For more on the login and signup systems, click here [here](./docs/userInformation.md).
+
+# Planning materials
+
+Majority of plannign was done through mini dev posts [here](https://github.com/orgs/jdmar3-comp426/teams/da-malloc-masters).
+
+Tasks were assigned through [trello](https://trello.com/b/VRMTkvog/dev) as well.
